@@ -1,0 +1,380 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+  :root {
+}
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  
+  
+}
+body {
+height: 63rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 2%;
+  height: 100%;
+  
+}
+
+.header4 {
+  width: 100%;
+  height: 60px;
+  
+  margin-bottom: 40px;
+}
+
+.menu4 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0 10%;
+}
+
+
+.menu4 li{
+  display: block;
+  height: 100%;
+  margin-right: 30px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+
+@keyframes anim2 {
+  0% {
+    opacity: 1;
+    transform: translateY(px);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  75% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+/* Style 4: :before and :after element's width increased from 0 to 100%*/
+
+.menu4 li:after,
+.menu4 li:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  display: block;
+  height: 1px;
+  transition: all 0.3s ease;
+  margin-top: 2px;
+}
+
+.menu4 li:after {
+  bottom: 25%;
+}
+
+.menu4 li:before {
+  top: 25%;
+}
+
+.menu4 li:hover::after {
+  width: 100%;
+  height: 1px;
+  bottom: 25%;
+  background-color: blue;
+}
+.menu4 li:hover::before {
+  width: 100%;
+  height: 1px;
+  top: 25%;
+  background-color: blue;
+}
+
+
+
+</style>
+</head>
+<body>
+<header>
+<img src="s.png" alt="" width="980" height="1088" style="width: 1521px; height: 1088px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+<div class="container">
+    <div class="header4">
+    <ul class="menu4">
+      <li>Home</li>
+      <li>About</li>
+      <li>Blog</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+</div>
+</header>
+<div style="color: white;margin-left:40%;margin-top:8%;width:28%;"> <h1 font-size: 64px !important;>I'm Mudit Kumar Srivastava.</h1>
+<p style="text-align: center !important;">Senior Salesforce Engineer</p></div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(120deg, #0f0f0f, #1e1e1e);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #00ffff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    section {
+      position: relative;
+      padding: 6rem 2rem;
+      color: white;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.7s ease;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .image {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .image img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ffff55;
+    }
+
+    .project-card {
+      background: rgba(34, 34, 34, 0.8);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffff55;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1b1b1b;
+      color: #888;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-content {
+        flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hello, I'm Mudit 👋</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" style="background-image: url('about.png');">
+    <div class="section-content">
+      <div class="text">
+        <h2>About Me</h2>
+		<p>
+		  I'm a passionate and results-oriented <strong>Salesforce Developer</strong> with over <strong>6 years of experience</strong> designing, developing, and deploying end-to-end Salesforce solutions across industries. I specialize in building scalable, secure, and high-performance applications using <strong>Apex, Lightning Web Components (LWC), Flows, and Salesforce Integrations</strong>.
+		</p>
+		<p>
+		  My experience spans <strong>Sales Cloud, Service Cloud, Experience Cloud, and Marketing Cloud</strong>, and I’ve led complex implementations involving automation, third-party integrations, and custom Lightning components. I bring a strong focus on clean architecture, reusable code, and user-centric design.
+		</p>
+		<p>
+		  I enjoy solving real-world business problems through technology and collaborating with cross-functional teams to deliver impact. I’m always learning and striving to stay ahead with new Salesforce features and web technologies.
+		</p>
+		<p>
+		  Outside of work, I explore new tech trends, contribute to the developer community, and mentor aspiring Salesforce professionals.
+		</p>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="background-image: url('projects.png');">
+    <div class="section-content">
+      <div class="text">
+        <h2>Projects</h2>
+        <div class="project-card">
+          <h3>Mastercard</h3>
+          <p>A modern, animated personal website made using HTML, CSS, and JS.</p>
+        </div>
+        <div class="project-card">
+          <h3>Mary Kay</h3>
+          <p>A Salesforce-based solution to automate customer journeys.</p>
+        </div>
+		<div class="project-card">
+          <h3>Multi Utility</h3>
+          <p>A Salesforce-based solution to automate customer journeys.</p>
+        </div>
+		<div class="project-card">
+          <h3>Novagraff</h3>
+          <p>A Salesforce-based solution to automate customer journeys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background-image: url('contact.jpg');">
+    <div class="section-content">
+      <div class="text">
+        <h2>Contact</h2>
+        <p>Feel free to reach out at: <a href="mailto:smudit96@gmail.com" style="color:#00ffff;">smudit96@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mudit Srivastava. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Reveal animation on scroll
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
